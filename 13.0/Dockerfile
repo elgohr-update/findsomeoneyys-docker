@@ -38,16 +38,7 @@ RUN set -x; \
 
 # install latest postgresql-client
 RUN set -x; \
-        echo 'deb http://apt.postgresql.org/pub/repos/apt/ buster-pgdg main' > /etc/apt/sources.list.d/pgdg.list \
-        && export GNUPGHOME="$(mktemp -d)" \
-        && repokey='B97B0AFCAA1A47F044F244A07FCC7D46ACCC4CF8' \
-        && gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "${repokey}" \
-        && gpg --batch --armor --export "${repokey}" > /etc/apt/trusted.gpg.d/pgdg.gpg.asc \
-        && gpgconf --kill all \
-        && rm -rf "$GNUPGHOME" \
-        && apt-get update  \
-        && apt-get install -f -y postgresql-client \
-        && rm -rf /var/lib/apt/lists/*
+        apt-get install -f -y postgresql-client
 
 # Install rtlcss (on Debian buster)
 RUN set -x; \
