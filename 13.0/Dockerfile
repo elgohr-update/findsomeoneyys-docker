@@ -14,11 +14,8 @@ RUN set -x; \
             dirmngr \
             fonts-noto-cjk \
             gnupg \
-            libssl-dev \
             node-less \
-            node-gyp \
             nodejs-dev \
-            libssl1.0-dev \
             npm \
             gcc \
             python3-dev \
