@@ -46,17 +46,12 @@ RUN set -x; \
 RUN set -x; \
     npm install -g rtlcss
 
+RUN pip3 install num2words xlwt xlrd phonenumbers qrcode
 # Install Odoo
 ENV ODOO_VERSION 13.0
 ARG ODOO_RELEASE=20200407
-RUN set -x; \
-        curl -o odoo.deb -sSL http://nightly.odoo.com/${ODOO_VERSION}/nightly/deb/odoo_${ODOO_VERSION}.${ODOO_RELEASE}_all.deb \
-        && dpkg --force-depends -i odoo.deb \
-        && apt-get update \
-        && apt-get -y install -f --no-install-recommends \
-        && rm -rf /var/lib/apt/lists/* odoo.deb
-
-RUN pip3 install num2words xlwt xlrd phonenumbers qrcode
+RUN pip3 install http://nightly.odoo.com/${ODOO_VERSION}/nightly/src/odoo_${ODOO_VERSION}.${ODOO_RELEASE}.tar.gz --no-cache
+        
 # Copy entrypoint script and Odoo configuration file
 COPY ./entrypoint.sh /
 COPY ./odoo.conf /etc/odoo/
