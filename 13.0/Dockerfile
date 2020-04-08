@@ -19,9 +19,11 @@ RUN set -x; \
             nodejs-dev \
             npm \
             gcc \
+            libpq-dev \
             python3 \
             python3-dev \
             python3-pip \
+            python3-wheel \
             build-essential \
             libxml2-dev \
             libxslt1-dev \
@@ -29,7 +31,6 @@ RUN set -x; \
             libffi-dev \
             libldap2-dev \
             libsasl2-dev \
-            libpq-dev \
             python3-renderpm \
             python3-setuptools \
             python3-slugify \
@@ -50,7 +51,7 @@ RUN set -x; \
 RUN set -x; \
     npm install -g rtlcss
 
-RUN pip3 install num2words xlwt xlrd phonenumbers qrcode
+RUN pip3 install num2words xlwt xlrd phonenumbers qrcode wheel
 # Install Odoo
 ENV ODOO_VERSION 13.0
 ARG ODOO_RELEASE=20200407
