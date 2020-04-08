@@ -17,11 +17,19 @@ RUN set -x; \
             libssl-dev \
             node-less \
             npm \
-            python3-pyldap \
+            gcc \
+            python3-dev \
+            build-essential \
+            libxml2-dev \
+            libxslt1-dev \
+            zlib1g-dev \
+            libffi-dev \
+            libldap2-dev \
+            libsasl2-dev \
+            libpq-dev \
             python3-renderpm \
             python3-setuptools \
             python3-slugify \
-            python3-vobject \
             python3-watchdog \
             xz-utils \
         && curl -o wkhtmltox.deb -sSL https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.5/wkhtmltox_0.12.5-1.stretch_amd64.deb \
