@@ -17,6 +17,7 @@ RUN set -x; \
             libssl-dev \
             node-less \
             npm \
+            python3-pyldap \
             python3-renderpm \
             python3-setuptools \
             python3-slugify \
@@ -55,7 +56,7 @@ RUN set -x; \
         && apt-get -y install -f --no-install-recommends \
         && rm -rf /var/lib/apt/lists/* odoo.deb
 
-RUN pip3 install num2words xlwt xlrd phonenumbers pyldap qrcode
+RUN pip3 install num2words xlwt xlrd phonenumbers qrcode
 # Copy entrypoint script and Odoo configuration file
 COPY ./entrypoint.sh /
 COPY ./odoo.conf /etc/odoo/
