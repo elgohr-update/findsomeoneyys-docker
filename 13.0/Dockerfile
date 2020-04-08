@@ -16,7 +16,7 @@ RUN set -x; \
             gnupg \
             libssl-dev \
             node-less \
-            nodejs \
+            node-gyp \
             npm \
             gcc \
             python3-dev \
