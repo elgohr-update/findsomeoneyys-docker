@@ -51,8 +51,8 @@ RUN pip3 install num2words xlwt xlrd phonenumbers qrcode
 ENV ODOO_VERSION 13.0
 ARG ODOO_RELEASE=20200407
 RUN wget http://nightly.odoo.com/${ODOO_VERSION}/nightly/src/odoo_${ODOO_VERSION}.${ODOO_RELEASE}.tar.gz \
-    && tar -zxvf odoo_${ODOO_VERSION}.${ODOO_RELEASE}.tar.gz \
-    && cd odoo-${ODOO_VERSION}.post${ODOO_RELEASE} && python3 setup.py \
+    && tar -zxvf odoo_${ODOO_VERSION}.${ODOO_RELEASE}.tar.gz
+RUN cd odoo-${ODOO_VERSION}.post${ODOO_RELEASE} && python3 setup.py install \
     && cd ${GITHUB_WORKSPACE} && ls | grep 'odoo.${ODOO_VERSION}.*' | xargs rm -rf
         
 # Copy entrypoint script and Odoo configuration file
