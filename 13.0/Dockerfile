@@ -19,7 +19,9 @@ RUN set -x; \
             nodejs-dev \
             npm \
             gcc \
+            python3 \
             python3-dev \
+            python3-pip \
             build-essential \
             libxml2-dev \
             libxslt1-dev \
