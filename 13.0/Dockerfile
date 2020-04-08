@@ -27,6 +27,7 @@ RUN set -x; \
             libldap2-dev \
             libsasl2-dev \
             libpq-dev \
+            libjpeg62-dev \
             python3-renderpm \
             python3-setuptools \
             python3-slugify \
