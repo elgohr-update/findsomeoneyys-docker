@@ -7,7 +7,7 @@ ENV LANG C.UTF-8
 # Install some deps, lessc and less-plugin-clean-css, and wkhtmltopdf
 RUN set -x; \
         apt-get update \
-        && apt-get install -y --no-install-recommends \
+        && apt-get install -f -y --no-install-recommends \
             ca-certificates \
             curl \
             git \
@@ -18,7 +18,7 @@ RUN set -x; \
             node-less \
             node-gyp \
             nodejs-dev \
-            libssl1.0-dev
+            libssl1.0-dev \
             npm \
             gcc \
             python3-dev \
