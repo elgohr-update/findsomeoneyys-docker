@@ -1,4 +1,4 @@
-FROM python:3.7-buster
+FROM python:3.7.7-alpine3.11
 MAINTAINER Odoo S.A. <info@odoo.com>
 
 # Generate locale C.UTF-8 for postgres and general locale data
