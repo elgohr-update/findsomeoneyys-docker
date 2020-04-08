@@ -38,7 +38,11 @@ RUN set -x; \
 
 # install latest postgresql-client
 RUN set -x; \
-        apt-get install -f -y postgresql-client
+        echo 'deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main' > /etc/apt/sources.list.d/pgdg.list \
+        && wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -" \
+        && apt-get update  \
+        && apt-get install -f -y postgresql-client \
+        && rm -rf /var/lib/apt/lists/*
 
 # Install rtlcss (on Debian buster)
 RUN set -x; \
